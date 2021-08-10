@@ -1,6 +1,19 @@
+/* ./src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --main: rgb(27, 27, 29);
+  --secondary: rgb(56, 57, 59);
+  --white: rgb(102, 107, 116);
+  --code-green: rgb(235, 237, 241);
+}
+
 body {
+  overflow: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8,6 +21,90 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  display: inline-flex;
+  background-color: var(--code-green) ;
+  font-family: 'Ubuntu Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  padding: 0.5rem;
+}
+
+#markdown {
+  display: flex;
+  flex-direction: flex-row;
+}
+
+#editor{
+  width: 50%;
+  margin: 0px;
+}
+
+textarea {
+  overflow-y:scroll;
+  background-color: var(--main);
+  color: var(--white);
+  width: 100%;
+  height: 100vh;
+  display: block;
+  padding: 2rem;
+  font-family: "Ubuntu Mono";
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  font-size: 1.1rem;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+#preview {
+  overflow-y: scroll;
+  width: 50%;
+  height: 100vh;
+  padding: 0rem 5rem;
+  line-height: 2rem;
+}
+
+img {
+  max-width: 90%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+h1 {
+  border-bottom: 2px solid var(--white);
+}
+
+h2 {
+  border-bottom: 1px solid var(--white);
+}
+
+blockquote {
+  border-left: 3px solid var(--white);
+  padding-left: 1rem;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid var(--white);
+  padding: 0.25rem;
 }
